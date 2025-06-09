@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<title th:text="#{add-edit}"></title>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}">
+</head>
+<body>
+	<div class="container" style="width: 95%;">
+		<form th:action="@{/add-edit}" method="post" th:object="${flightForm}">
+			<div class="row justify-content-center">
+				<h5 th:text="#{add-flight}"></h5>
+			</div>
+			<div class="row text-light bg-primary">
+				<div class="col-1">
+					<div th:text="#{dept-time-jp}"></div>
+				</div>
+				<div class="col-1">
+					<div th:text="#{changed-jp}"></div>
+				</div>
+				<div class="col-2">
+					<div th:text="#{airline}"></div>
+				</div>
+				<div class="col-2">
+					<div th:text="#{flight}"></div>
+				</div>
+				<div class="col-2">
+					<div th:text="#{destination-jp}"></div>
+				</div>
+				<div class="col-1">
+					<div th:text="#{gate-jp}"></div>
+				</div>
+				<div class="col-3">
+					<div th:text="#{remark-jp}"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-1">
+					<input type="time" th:field="*{deptTime}">
+				</div>
+				<div class="col-1">
+					<input type="time" th:field="*{newDeptTime}">
+				</div>
+				<div class="col-2">
+					<select class="form-select" th:field="*{airlineId}">
+						<option th:each="airline:${airlines}" th:value="${airline.id}" th:text="${airline.airlineName}"></option>
+					</select>
+				</div>
+				<div class="col-2">
+					<input type="text" th:field="*{flight}">
+				</div>
+				<div class="col-2">
+					<select class="form-select" th:field="*{destId}">
+						<option th:each="dest:${dests}" th:value="${dest.id}" th:text="${dest.destJp}"></option>
+					</select>
+				</div>
+				<div class="col-1">
+					<input type="text" th:field="*{gate}">
+				</div>
+				<div class="col-3">
+					<select class="form-select" th:field="*{remarkId}">
+						<option th:each="remark:${remarks}" th:value="${remark.id}" th:text="${remark.remarkJp}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="row justify-content-end">
+				<div class="col-auto">
+					<input type="hidden" th:field="*{id}">
+					<input type="submit" class="btn btn-primary" th:value="#{add-edit}">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

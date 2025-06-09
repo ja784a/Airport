@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ja784a.ukb.repository.TimetableMapper">
+	<resultMap type="ja784a.ukb.domain.flights.model.Timetable" id="timetable">
+		<id column="id" property="id"></id>
+		<result column="airline_id" property="airlineId"></result>
+		<result column="dept_time" property="deptTime"></result>
+		<result column="new_dept_time" property="newDeptTime"></result>
+		<result column="flight" property="flight"></result>
+		<result column="dest_id" property="destId"></result>
+		<result column="gate" property="gate"></result>
+		<result column="remark_id" property="remarkId"></result>
+		<association property="airline" resultMap="ja784a.ukb.repository.AirlineMapper.airline"></association>
+		<association property="dest" resultMap="ja784a.ukb.repository.DestMapper.dest"></association>
+		<association property="remark" resultMap="ja784a.ukb.repository.RemarkMapper.remark"></association>
+	</resultMap>
+	<select id="selectFlightsByTime" resultMap="timetable">
+		select * from timetable 
+		join airline 
+		on airline_id = airline.id 
+		join dest 
+		on dest_id = dest.id 
+		left join remark 
+		on remark_id = remark.id 
+		<!-- where dept_time >= CURTIME() 
+		or new_dept_time >= CURTIME() -->
+		order by dept_time asc 
+		<!-- limet 12 -->
+	</select>
+	
+	<insert id="insertFlight">
+	insert into timetable (airline_id, dept_time, new_dept_time, flight, dest_id, gate, remark_id) values 
+	(#{airlineId}, #{deptTime}, #{newDeptTime}, #{flight}, 
+	#{destId}, #{gate}, #{remarkId}) 
+	</insert>
+	
+	<select id="selectAllFlights" resultMap="timetable">
+		select * from timetable 
+		join airline 
+		on airline_id = airline.id 
+		join dest 
+		on dest_id = dest.id 
+		left join remark 
+		on remark_id = remark.id 
+		order by dept_time asc 
+	</select>
+	
+	<select id="selectFlight" resultMap="timetable">
+		select * from timetable 
+		join airline 
+		on airline_id = airline.id 
+		join dest 
+		on dest_id = dest.id 
+		left join remark 
+		on remark_id = remark.id 
+		where timetable.id = #{id} 
+	</select>
+	
+	<update id="updateFlight">
+		update timetable set 
+		airline_id = #{airlineId}, 
+		dept_time = #{deptTime}, 
+		new_dept_time = #{newDeptTime}, 
+		flight = #{flight}, 
+		dest_id = #{destId}, 
+		gate = #{gate}, 
+		remark_id = #{remarkId} 
+		where id = #{id} 
+	</update>
+</mapper>
