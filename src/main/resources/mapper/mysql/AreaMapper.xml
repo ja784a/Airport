@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ja784a.ukb.repository.AreaMapper">
+	<resultMap type='ja784a.ukb.domain.flights.model.Area' id="area">
+		<id column="id" property="id"></id>
+		<result column="area_name" property="areaName"></result>
+		<result column="dom_or_int" property="domOrInt"></result>
+	</resultMap>
+	
+	<select id="selectDomAreas" resultMap="area">
+		select * from area 
+		where dom_or_int = 'dom' 
+	</select>
+	
+	<select id="selectIntAreas" resultMap="area">
+		select * from area 
+		where dom_or_int = 'int' 
+	</select>
+</mapper>

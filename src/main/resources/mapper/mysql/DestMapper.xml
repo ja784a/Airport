@@ -8,8 +8,11 @@
 		<result column="dest_eg" property="destEg"></result>
 		<result column="s_dest_jp" property="sDestJp"></result>
 		<result column="s_dest_eg" property="sDestEg"></result>
+		<association property="area" resultMap="ja784a.ukb.repository.AreaMapper.area"></association>
 	</resultMap>
 	<select id="selectDests" resultMap="dest">
 		select * from dest 
+		join area 
+		on area_id = area.id 
 	</select>
 </mapper>

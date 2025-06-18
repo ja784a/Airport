@@ -27,3 +27,7 @@ dest_eg varchar(50),
 s_dest_jp varchar(50), 
 s_desteg varchar(50) )
 
+create table area (
+id bigint not null auto_increment primary key, 
+area_name varchar(50), 
+dom_or_int varchar(50) ) 

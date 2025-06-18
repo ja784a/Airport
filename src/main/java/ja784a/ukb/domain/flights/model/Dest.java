@@ -10,4 +10,5 @@ public class Dest {
 	private String destEg;
 	private String sDestJp;
 	private String sDestEg;
+	private Area area;
 }

@@ -1,6 +1,7 @@
 package ja784a.ukb.domain.flights.service.impl;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,9 @@ public class TimetableServiceImpl implements TimetableService {
 	}
 	
 	public void addFlight(Timetable timetable) {
+		Random random = new Random();
+		timetable.setFlight(random.nextInt(1999) + 1);
+		timetable.setGate(random.nextInt(29) + 1);
 		mapper.insertFlight(timetable);
 	}
 	

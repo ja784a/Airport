@@ -9,4 +9,5 @@ public class Airline {
 	private String logo;
 	private String sAirlineJp;
 	private String sAirlineEg;
+	private String twoLetter;
 }

@@ -23,10 +23,10 @@
 		on dest_id = dest.id 
 		left join remark 
 		on remark_id = remark.id 
-		<!-- where dept_time >= CURTIME() 
-		or new_dept_time >= CURTIME() -->
+		where dept_time >= CURTIME() 
+		or new_dept_time >= CURTIME()
 		order by dept_time asc 
-		<!-- limet 12 -->
+		limit 12
 	</select>
 	
 	<insert id="insertFlight">

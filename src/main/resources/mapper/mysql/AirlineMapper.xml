@@ -8,6 +8,7 @@
 		<result column="logo" property="logo"></result>
 		<result column="s_airline_jp" property="sAirlineJp"></result>
 		<result column="s_airline_eg" property="sAirlineEg"></result>
+		<result column="two_letter" property="twoLetter"></result>
 	</resultMap>
 	<select id="selectAirlines" resultMap="airline">
 		select * from airline 
