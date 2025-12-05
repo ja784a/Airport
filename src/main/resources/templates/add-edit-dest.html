@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http;//www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title thtext="#{add-edit-dest}"></title>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}"></link>
+</head>
+<body>
+	<div class="container">
+		<div class="row bg-danger text-light">
+			<div class="col-2">
+				<div th:text="#{dest-jp}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{dest-eg}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{s-dest-jp}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{s-dest-eg}"></div>
+			</div>
+			<div class="col-4">
+				<div th:text="#{area}"></div>
+			</div>
+		</div>
+		<form th:action="@{/add-edit-dest}" method="post" th:object="${destForm}">
+			<div class="row">
+				<div class="col-2">
+					<input type="text" th:field="*{destJp}">
+				</div>
+				<div class="col-2">
+					<input type="text" th:field="*{destEg}">
+				</div>
+				<div class="col-2">
+					<input type="text" th:field="*{sDestJp}">
+				</div>
+				<div class="col-2">
+					<input type="text" th:field="*{sDestEg}">
+				</div>
+				<div class="col-4">
+					<select class="form-select" th:field="*{areaId}">
+						<option th:each="area:${areas}" th:value="${area.id}" th:text="${area.areaName}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="row justify-content-end">
+				<div class="col-auto">
+					<input type="hidden" th:field="*{id}">
+					<input type="submit" class="btn btn-primary" th:value="#{add-edit}" />
+				</div>
+			</div>
+		</form>
+		<div class="row justify-content-end">
+			<div class="col-auto">
+				<a th:href="@{/command-dests}" th:text="#{command-dests}"></a>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

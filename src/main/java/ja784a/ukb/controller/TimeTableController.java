@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import ja784a.ukb.domain.flights.model.Announce;
 import ja784a.ukb.domain.flights.model.Timetable;
 import ja784a.ukb.domain.flights.service.TimetableService;
 
@@ -21,6 +22,12 @@ public class TimeTableController {
 		List<Timetable> timetable = timetableService.getTimetableByTime();
 		model.addAttribute("timetable", timetable);
 		
+		List<Announce> texts = timetableService.getAnnounceBfo5Min();
+		for (Announce t : texts) {
+	 		model.addAttribute("text", t.getText());
+	 		model.addAttribute("textEg", t.getTextEg());
+		}
+		
 		Date date = new Date();
 		model.addAttribute("date", date);
 		
@@ -32,6 +39,12 @@ public class TimeTableController {
 		List<Timetable> timetable = timetableService.getTimetableByTime();
 		model.addAttribute("timetable", timetable);
 		
+		List<Announce> texts = timetableService.getAnnounceBfo5Min();
+		for (Announce t : texts) {
+	 		model.addAttribute("text", t.getText());
+	 		model.addAttribute("textEg", t.getTextEg());
+		}
+ 		
 		Date date = new Date();
 		model.addAttribute("date", date);
 		return "ukb-timetable-eg";

@@ -103,7 +103,16 @@
 				<a th:href="@{/command-flights}" th:text="#{setting}"></a>
 			</div>
 		</div>
+		<script th:inlene="javascript">
+			const text = ("[[${text}]]");
+			const textEg = ("[[${textEg}]]");
+			 const uttr = new SpeechSynthesisUtterance(text);
+			 uttr.lang='ja-JP';
+			 speechSynthesis.speak(uttr);
+			 const uttr2 = new SpeechSynthesisUtterance(textEg);
+			 uttr2.lang = 'en';
+			 speechSynthesis.speak(uttr2);
+		</script>
 	</div>
-	
 </body>
 </html>

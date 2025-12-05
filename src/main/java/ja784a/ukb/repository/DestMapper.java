@@ -9,4 +9,10 @@ import ja784a.ukb.domain.flights.model.Dest;
 @Mapper
 public interface DestMapper {
 	public List<Dest> selectDests();
+	
+	public void insertDest(Dest dest);
+	
+	public Dest selectDest(Integer id);
+	
+	public void updateDest(Dest dest);
 }

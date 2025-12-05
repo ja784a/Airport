@@ -21,4 +21,8 @@ public class AreaServiceImpl implements AreaService {
 	public List<Area> getIntAreas() {
 		return mapper.selectIntAreas();
 	}
+	
+	public List<Area> getAreas() {
+		return mapper.selectAreas();
+	}
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title th:text="#{command-airlines}"></title>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}">
+</head>
+<body>
+	<div class="container">
+		<div class="row bg-success text-light">
+			<div class="col-2">
+				<div th:text="#{airline}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{logo}"></div>
+			</div>
+			<div class="col-3">
+				<div th:text="#{s-airline-jp}"></div>
+			</div>
+			<div class="col-3">
+				<div th:text="#{s-airline-eg}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{two-letter}"></div>
+			</div>
+		</div>
+		<div th:each="airline:${airlines}">
+			<div class="row">
+				<div class="col-2">
+					<div th:text="${airline.airlineName}"></div>
+				</div>
+				<div class="col-2">
+					<div th:text="${airline.logo}"></div>
+				</div>
+				<div class="col-3">
+					<div th:text="${airline.sAirlineJp}"></div>
+				</div>
+				<div class="col-3">
+					<div th:text="${airline.sAirlineEg}"></div>
+				</div>
+				<div class="col-1">
+					<div th:text="${airline.twoLetter}"></div>
+				</div>
+				<div class="col-1">
+					<a th:href="@{/edit-airline/{id} (id = ${airline.id})}" th:text="#{edit}"></a>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-end">
+			<div class="col-auto">
+				<a th:href="@{/add-airline}" th:text="#{add-airline}" class="btn btn-primary"></a>
+			</div>
+		</div>
+		<div class="row justify-content-end">
+			<div class="col-auto">
+				<a th:href="@{/command-flights}" th:text="#{command-flights}"></a>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

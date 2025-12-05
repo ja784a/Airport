@@ -17,4 +17,8 @@
 		select * from area 
 		where dom_or_int = 'int' 
 	</select>
+	
+	<select id="selectAreas" resultMap="area">
+		select * from area 
+	</select>
 </mapper>

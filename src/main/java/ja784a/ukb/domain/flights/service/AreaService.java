@@ -8,4 +8,6 @@ public interface AreaService {
 	public List<Area> getDomAreas();
 	
 	public List<Area> getIntAreas();
+	
+	public List<Area> getAreas();
 }

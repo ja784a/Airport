@@ -96,7 +96,7 @@ public class FlightController {
 		flightForm.setGate(flight.getGate());
 		flightForm.setRemarkId(flight.getRemarkId());
 		
-List<Airline> airlines = airlineService.getAirlines();
+		List<Airline> airlines = airlineService.getAirlines();
 		
 		List<Dest> dests = destService.getDests();
 		

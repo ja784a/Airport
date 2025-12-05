@@ -19,4 +19,15 @@ public class AirlineServiceImpl implements AirlineService {
 		return mapper.selectAirlines();
 	}
 	
+	public Airline getAirline(int id) {
+		return mapper.selectAirline(id);
+	}
+	
+	public void addAirline(Airline airline) {
+		mapper.insertAirline(airline);
+	}
+	
+	public void updateAirline(Airline airline) {
+		mapper.updateAirline(airline);
+	}
 }

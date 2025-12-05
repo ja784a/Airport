@@ -8,6 +8,7 @@
 		<result column="dest_eg" property="destEg"></result>
 		<result column="s_dest_jp" property="sDestJp"></result>
 		<result column="s_dest_eg" property="sDestEg"></result>
+		<result column="area_id" property="areaId"></result>
 		<association property="area" resultMap="ja784a.ukb.repository.AreaMapper.area"></association>
 	</resultMap>
 	<select id="selectDests" resultMap="dest">
@@ -15,4 +16,26 @@
 		join area 
 		on area_id = area.id 
 	</select>
+	
+	<insert id="insertDest">
+		insert into dest (dest_jp, dest_eg, s_dest_jp, s_dest_eg, area_id) values 
+		(#{destJp}, #{destEg}, #{sDestJp}, #{sDestEg}, #{areaId}) 
+	</insert>
+	
+	<select id="selectDest" resultMap="dest">
+		select * from dest 
+		join area 
+		on area_id = area.id 
+		where dest.id = #{id} 
+	</select>
+	
+	<update id="updateDest">
+		update dest set 
+		dest_jp = #{destJp}, 
+		dest_eg = #{destEg}, 
+		s_dest_jp = #{sDestJp}, 
+		s_dest_eg = #{sDestEg}, 
+		area_id = #{areaId} 
+		where id = #{id} 
+	</update>
 </mapper>

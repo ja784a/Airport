@@ -11,4 +11,6 @@ public interface AreaMapper {
 	public List<Area> selectDomAreas();
 	
 	public List<Area> selectIntAreas();
+	
+	public List<Area> selectAreas();
 }

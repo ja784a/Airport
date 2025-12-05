@@ -90,5 +90,15 @@
 			</div>
 		</div>
 	</div>
+	<script th:inlene="javascript">
+		const text = ("[[${text}]]");
+		const textEg = ("[[${textEg}]]");
+		 const uttr1 = new SpeechSynthesisUtterance(text);
+		 uttr.lang='ja-JP';
+		 speechSynthesis.speak(uttr);
+		 const uttr2 = new SpeechSynthesisUtterance(textEg);
+		 uttr2.lang = 'en';
+		 speechSynthesis.speak(uttr2);
+	</script>
 </body>
 </html>

@@ -13,4 +13,24 @@
 	<select id="selectAirlines" resultMap="airline">
 		select * from airline 
 	</select>
+	
+	<select id="selectAirline" resultMap="airline">
+		select * from airline 
+		where id = #{id} 
+	</select>
+	
+	<insert id="insertAirline">
+		insert into airline (airline_name, logo, s_airline_jp, s_airline_eg, two_letter) values 
+		(#{airlineName}, #{logo}, #{sAirlineJp}, #{sAirlineEg}, #{twoLetter})
+	</insert>
+	
+	<update id="updateAirline">
+		update airline set 
+		airline_name = #{airlineName}, 
+		logo = #{logo}, 
+		s_airline_jp = #{sAirlineJp}, 
+		s_airline_eg = #{sAirlineEg}, 
+		two_letter = #{twoLetter} 
+		where id = #{id} 
+	</update>
 </mapper>

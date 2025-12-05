@@ -9,4 +9,10 @@ import ja784a.ukb.domain.flights.model.Airline;
 @Mapper
 public interface AirlineMapper {
 	public List<Airline> selectAirlines();
+	
+	public Airline selectAirline(int id);
+	
+	public void insertAirline(Airline airline);
+	
+	public void updateAirline(Airline airline);
 }
