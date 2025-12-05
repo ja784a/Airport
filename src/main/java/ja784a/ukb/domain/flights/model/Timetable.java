@@ -10,7 +10,7 @@ public class Timetable {
 	private int airlineId;
 	private LocalTime deptTime;
 	private LocalTime newDeptTime;
-	private String flight;
+	private int flight;
 	private int destId;
 	private int gate;
 	private int remarkId;

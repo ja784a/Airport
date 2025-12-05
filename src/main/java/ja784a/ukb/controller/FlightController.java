@@ -16,6 +16,7 @@ import ja784a.ukb.domain.flights.model.Dest;
 import ja784a.ukb.domain.flights.model.Remark;
 import ja784a.ukb.domain.flights.model.Timetable;
 import ja784a.ukb.domain.flights.service.AirlineService;
+import ja784a.ukb.domain.flights.service.AreaService;
 import ja784a.ukb.domain.flights.service.DestService;
 import ja784a.ukb.domain.flights.service.RemarkService;
 import ja784a.ukb.domain.flights.service.TimetableService;
@@ -33,6 +34,9 @@ public class FlightController {
 	private DestService destService;
 	
 	@Autowired
+	private AreaService areaService;
+	
+	@Autowired
 	private RemarkService remarkService;
 	
 	@Autowired
@@ -47,8 +51,8 @@ public class FlightController {
 		List<Remark> remarks = remarkService.getRemarks();
 		
 		model.addAttribute("airlines", airlines);
-		model.addAttribute("dests", dests);
 		model.addAttribute("remarks", remarks);
+		model.addAttribute("dests", dests);
 		
 		return "add-edit";
 	}
@@ -92,7 +96,7 @@ public class FlightController {
 		flightForm.setGate(flight.getGate());
 		flightForm.setRemarkId(flight.getRemarkId());
 		
-List<Airline> airlines = airlineService.getAirlines();
+		List<Airline> airlines = airlineService.getAirlines();
 		
 		List<Dest> dests = destService.getDests();
 		

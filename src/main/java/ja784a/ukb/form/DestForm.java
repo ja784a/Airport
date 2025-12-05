@@ -1,15 +1,13 @@
-
-package ja784a.ukb.domain.flights.model;
+package ja784a.ukb.form;
 
 import lombok.Data;
 
 @Data
-public class Dest {
+public class DestForm {
 	private int id;
 	private String destJp;
 	private String destEg;
 	private String sDestJp;
 	private String sDestEg;
 	private int areaId;
-	private Area area;
 }

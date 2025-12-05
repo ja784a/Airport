@@ -51,7 +51,7 @@
 				</div>
 				<div class="col-2">
 					<select class="form-select" th:field="*{destId}">
-						<option th:each="dest:${dests}" th:value="${dest.id}" th:text="${dest.destJp}"></option>
+						<option th:each="dest:${dests}" th:text="${dest.destJp}" th:value="${dest.id}"></option>
 					</select>
 				</div>
 				<div class="col-1">

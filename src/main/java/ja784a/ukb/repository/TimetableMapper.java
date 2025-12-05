@@ -17,4 +17,6 @@ public interface TimetableMapper {
 	public Timetable selectFlight(int id);
 	
 	public void updateFlight(Timetable timetable);
+	
+	public List<Timetable> selectFlightsBfo5Min();
 }

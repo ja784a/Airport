@@ -22,7 +22,7 @@
 		}, 5000);
 	</script> -->
 	<div class="container text-light" style="width: 99%; height: 100vh;">
-		<div class="row justify-content-center" style="height: 15%">
+		<div class="row justify-content-center" style="height: 10%">
 			<div class="col-auto">
 				<h2 th:text="#{departure}"></h2>
 			</div>
@@ -65,8 +65,11 @@
 			<div class="col-1">
 				<div th:text="#{gate-eg}"></div>
 			</div>
-			<div class="col-5">
+			<div class="col-2">
 				<div th:text="#{remark-eg}"></div>
+			</div>
+			<div class="col-3">
+				<div th:text="#{time} + ' ' + ${#dates.format(date, 'HH:mm')}"></div>
 			</div>
 		</div>
 		<div th:each="flight:${timetable}">
@@ -81,7 +84,7 @@
 					<img th:src="@{'/images/' + ${flight.airline.logo}}" style="height: 100%; width: 100%;">
 				</div>
 				<div class="col-1" style="height: 10%;">
-					<div th:text="${flight.flight}"></div>
+					<div th:text="${flight.airline.twoLetter} + ${flight.flight}"></div>
 				</div>
 				<div class="col-2" style="height: 10%;">
 					<div th:text="${flight.dest.destJp}"></div>
@@ -95,6 +98,21 @@
 				</div>
 			</div>
 		</div>
+		<div class="row justify-content-end">
+			<div class="col-auto">
+				<a th:href="@{/command-flights}" th:text="#{setting}"></a>
+			</div>
+		</div>
+		<script th:inlene="javascript">
+			const text = ("[[${text}]]");
+			const textEg = ("[[${textEg}]]");
+			 const uttr = new SpeechSynthesisUtterance(text);
+			 uttr.lang='ja-JP';
+			 speechSynthesis.speak(uttr);
+			 const uttr2 = new SpeechSynthesisUtterance(textEg);
+			 uttr2.lang = 'en';
+			 speechSynthesis.speak(uttr2);
+		</script>
 	</div>
 </body>
 </html>

@@ -1,9 +1,9 @@
-package ja784a.ukb.domain.flights.model;
+package ja784a.ukb.form;
 
 import lombok.Data;
 
 @Data
-public class Airline {
+public class AirlineForm {
 	private int id;
 	private String airlineName;
 	private String logo;

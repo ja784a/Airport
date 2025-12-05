@@ -2,6 +2,7 @@ package ja784a.ukb.domain.flights.service;
 
 import java.util.List;
 
+import ja784a.ukb.domain.flights.model.Announce;
 import ja784a.ukb.domain.flights.model.Timetable;
 
 public interface TimetableService {
@@ -14,4 +15,6 @@ public interface TimetableService {
 	public Timetable getFlight(int id);
 	
 	public void updateFlight(Timetable timetable);
+	
+	public List<Announce> getAnnounceBfo5Min();
 }

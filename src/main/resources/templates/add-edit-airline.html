@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title　th:text="#{add-edit-airline}"></title>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}"></head>
+<body>
+	<div class="container">
+		<div class="row bg-success text-light">
+			<div class="col-2">
+				<div th:text="#{airline}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{logo}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{s-airline-jp}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{s-airline-eg}"></div>
+			</div>
+			<div class="col-2">
+				<div th:text="#{two-letter}"></div>
+			</div>
+		</div>
+		<form th:action="@{/add-edit-airline}" method="post" th:object="${airlineForm}">
+			<div class="row">
+				<div class="col-2">
+					<input type="text" th:field="*{airlineName}">
+				</div>
+				<div class="col-2">
+					<input  type="text" th:field="*{logo}">
+				</div>
+				<div class="col-2">
+					<input type="text" th:field="*{sAirlineJp}">
+				</div>
+				<div class="col-2">
+					<input type="text" th:field="*{sAirlineEg}">
+				</div>
+				<div class="col-2">
+					<input type="text" th:field="*{twoLetter}">
+				</div>
+			</div>
+			<div class="row justify-content-end">
+				<div class="col-2">
+					<input type="hidden" th:field="*{id}">
+					<input type="submit" th:value="#{add-airline}" class="btn btn-primary">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -14,7 +14,23 @@ public class DestServiceImpl implements DestService {
 	@Autowired
 	private DestMapper mapper;
 	
+	@Override
 	public List<Dest> getDests() {
 		return mapper.selectDests();
+	}
+	
+	@Override
+	public void addDest(Dest dest) {
+		mapper.insertDest(dest);
+	}
+	
+	@Override
+	public Dest getDest(Integer id) {
+		return mapper.selectDest(id);
+	}
+	
+	@Override
+	public void updateDest(Dest dest) {
+		mapper.updateDest(dest);
 	}
 }
