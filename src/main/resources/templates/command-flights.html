@@ -25,7 +25,7 @@
 			<div class="col-1">
 				<div th:text="#{flight}"></div>
 			</div>
-			<div class="col-2">
+			<div class="col-1">
 				<div th:text="#{destination-jp}"></div>
 			</div>
 			<div class="col-1">
@@ -50,7 +50,7 @@
 				<div class="col-1">
 					<div th:text="${flight.airline.twoLetter} + ${flight.flight}"></div>
 				</div>
-				<div class="col-2">
+				<div class="col-1">
 					<div th:text="${flight.dest.destJp}"></div>
 				</div>
 				<div class="col-1">
@@ -60,7 +60,10 @@
 					<div th:text="${flight.remark.remarkJp}"></div>
 				</div>
 				<div class="col-1">
-					<a th:href="@{/edit-flight/{id} (id = ${flight.id})}" th:text="#{edit}"></a>
+					<a th:href="@{/edit-flight/{id} (id = ${flight.id})}" th:text="#{edit}" class="text-primary"></a>
+				</div>
+				<div class="col-1">
+					<a th:href="@{/delete-flight/{id} (id = ${flight.id})}" th:text="#{delete}" class="text-danger"></a>
 				</div>
 			</div>
 		</div>
@@ -74,7 +77,7 @@
 				<a th:href="@{/command-dests}" th:text="#{command-dests}"></a>
 			</div>
 			<div class="col-2">
-				<a th:href="@{/ukb-timetable-jp}" th:text="#{title}"></a>
+				<a th:href="@{/}" th:text="#{title}"></a>
 			</div>
 			<div class="col-2">
 				<a th:href="@{/command-airlines}" th:text="#{command-airlines}"></a>

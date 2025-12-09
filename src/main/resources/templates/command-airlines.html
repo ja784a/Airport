@@ -7,11 +7,12 @@
 </head>
 <body>
 	<div class="container">
+		<h5 th:text="#{command-airlines}" class="text-center"></h5>
 		<div class="row bg-success text-light">
 			<div class="col-2">
 				<div th:text="#{airline}"></div>
 			</div>
-			<div class="col-2">
+			<div class="col-1">
 				<div th:text="#{logo}"></div>
 			</div>
 			<div class="col-3">
@@ -20,16 +21,16 @@
 			<div class="col-3">
 				<div th:text="#{s-airline-eg}"></div>
 			</div>
-			<div class="col-2">
+			<div class="col-3">
 				<div th:text="#{two-letter}"></div>
 			</div>
 		</div>
 		<div th:each="airline:${airlines}">
-			<div class="row">
+			<div class="row border-bottom border-dark">
 				<div class="col-2">
 					<div th:text="${airline.airlineName}"></div>
 				</div>
-				<div class="col-2">
+				<div class="col-1">
 					<div th:text="${airline.logo}"></div>
 				</div>
 				<div class="col-3">
@@ -43,6 +44,9 @@
 				</div>
 				<div class="col-1">
 					<a th:href="@{/edit-airline/{id} (id = ${airline.id})}" th:text="#{edit}"></a>
+				</div>
+				<div class="col-1">
+					<a th:href="@{/delete-airline/{id} (id = ${airline.id})}" th:text="#{delete}" class="text-danger"></a>
 				</div>
 			</div>
 		</div>
