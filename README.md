@@ -12,3 +12,5 @@ Spring Bootを用いて空港の出発案内板を再現しました。
 フレームワーク・・・Spring Boot
 # 本アプリケーションの実行にあったって
 実行の前に必ず以下のSQLファイルからマスターデータ、およびサンプルデータを追加してください。<br>
+・schema.sql・・・src/main/resources/schema.sql<br>
+・data.sql・・・src/main/resources/data.sql
