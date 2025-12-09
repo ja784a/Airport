@@ -6,6 +6,7 @@
 	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}"></head>
 <body>
 	<div class="container">
+		<h5 th:text="#{add-edit-airline}"></h5>
 		<div class="row bg-success text-light">
 			<div class="col-2">
 				<div th:text="#{airline}"></div>
@@ -47,6 +48,7 @@
 					<input type="submit" th:value="#{add-airline}" class="btn btn-primary">
 				</div>
 			</div>
+			<a th:href="@{/command-airlines}" th:text="#{back}"></a>
 		</form>
 	</div>
 </body>

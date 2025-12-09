@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div th:each="dest:${dests}">
-			<div class="row border border-bottom">
+			<div class="row border-dark border-bottom">
 				<div class="col-2">
 					<div th:text="${dest.destJp}"></div>
 				</div>
@@ -43,11 +43,14 @@
 				<div class="col-2">
 					<div th:text="${dest.sDestEg}"></div>
 				</div>
-				<div class="col-3">
+				<div class="col-2">
 					<div th:text="${dest.area.areaName}"></div>
 				</div>
 				<div class="col-1">
 					<a th:href="@{/edit-dest/{id} (id = ${dest.id})}" th:text="#{edit}"></a>
+				</div>
+				<div class="col-1">
+					<a th:href="@{/delete-dest/{id} (id = ${dest.id})}" th:text="#{delete}" class="text-danger"></a>
 				</div>
 			</div>
 		</div>

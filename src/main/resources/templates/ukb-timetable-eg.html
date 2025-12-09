@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title th:text="#{title}"></title>
-	<meta http-equiv="refresh" content="5;url=ukb-timetable-jp">
+	<meta http-equiv="refresh" content="5;url=/">
 	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}">
 </head>
 <body style="background-color: midnightblue;">
@@ -79,7 +79,7 @@
 					<div th:text="${flight.gate}"></div>
 				</div>
 				<div class="col-5" style="height: 10%;">
-					<div th:classappend="${flight.remarkId eq 3 || flight.remarkId eq 4 ? 'text-warning' : ''}" 
+					<div th:classappend="${flight.remarkId eq 4 || flight.remarkId eq 5 ? 'text-warning' : ''}" 
 					th:text="${flight.remark.remarkEg}"></div>
 				</div>
 			</div>

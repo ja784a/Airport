@@ -7,6 +7,7 @@
 </head>
 <body>
 	<div class="container">
+		<h5 th:text="#{command-dests}"></h5>
 		<div class="row bg-danger text-light">
 			<div class="col-2">
 				<div th:text="#{dest-jp}"></div>
@@ -51,9 +52,9 @@
 				</div>
 			</div>
 		</form>
-		<div class="row justify-content-end">
+		<div class="row">
 			<div class="col-auto">
-				<a th:href="@{/command-dests}" th:text="#{command-dests}"></a>
+				<a th:href="@{/command-dests}" th:text="#{back}"></a>
 			</div>
 		</div>
 	</div>

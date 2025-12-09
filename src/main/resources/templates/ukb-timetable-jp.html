@@ -7,20 +7,6 @@
 	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}">
 </head>
 <body style="background-color: midnightblue;">
-	<!--<script>
-		let lastUrl = localStorage.getItem('lastUrl');
-		
-		const urlA = "ukb-timetable-jp";
-		const urlB = "ukb-timetable-eg";
-		
-		const nextUrl = (lastUrl === urlA) ? urlB : urlA;
-		
-		localStorage.setItem('lastUrl', nextUrl);
-		
-		setTimeout(() => {
-			window.location.href = nextUrl;
-		}, 5000);
-	</script> -->
 	<div class="container text-light" style="width: 99%; height: 100vh;">
 		<div class="row justify-content-center" style="height: 10%">
 			<div class="col-auto">
@@ -93,7 +79,7 @@
 					<div th:text="${flight.gate}"></div>
 				</div>
 				<div class="col-5" style="height: 10%;">
-					<div th:classappend="${flight.remarkId eq 3 || flight.remarkId eq 4 ? 'text-warning' : ''}" 
+					<div th:classappend="${flight.remarkId eq 4 || flight.remarkId eq 5 ? 'text-warning' : ''}" 
 					th:text="${flight.remark.remarkJp}"></div>
 				</div>
 			</div>
