@@ -8,9 +8,7 @@
 <body>
 	<div class="container" style="width: 95%;">
 		<form th:action="@{/add-edit}" method="post" th:object="${flightForm}">
-			<div class="row justify-content-center">
-				<h5 th:text="#{add-flight}"></h5>
-			</div>
+			<h5 class="text-center" th:text="#{add-flight}"></h5>
 			<div class="row text-light bg-primary">
 				<div class="col-1">
 					<div th:text="#{dept-time-jp}"></div>
@@ -63,13 +61,11 @@
 					</select>
 				</div>
 			</div>
-			<div class="row justify-content-end">
-				<div class="col-auto">
-					<input type="hidden" th:field="*{id}">
-					<input type="submit" class="btn btn-primary" th:value="#{add-edit}">
-				</div>
+			<div class="text-end">
+				<input type="hidden" th:field="*{id}">
+				<input type="submit" class="btn btn-primary" th:value="#{add-edit}">
 			</div>
-			<a th:href="@{/command-airlines}" th:text="#{back}"></a>
+			<a th:href="@{/command-flights}" th:text="#{back}"></a>
 		</form>
 	</div>
 </body>

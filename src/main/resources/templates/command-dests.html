@@ -7,11 +7,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-auto">
-				<h5 th:text="#{command-dests}"></h5>
-			</div>
-		</div>
+		<h5 class="text-center" th:text="#{command-dests}"></h5>
 		<div class="row text-light bg-danger">
 			<div class="col-2">
 				<div th:text="#{dest-jp}"></div>
@@ -54,16 +50,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-end">
-			<div class="col-auto">
-				<a th:href="@{/add-dest}" class="btn btn-danger" th:text="#{add-dest}"></a>
-			</div>
+		<div class="text-end">
+			<a th:href="@{/add-dest}" class="btn btn-danger" th:text="#{add-dest}"></a>
 		</div>
-		<div class="row justify-content-end">
-			<div class="col-auto">
-				<a th:href="@{/command-flights}" th:text="#{command-flights}"></a>
-			</div>
-		</div>
+		<a th:href="@{/command-flights}" th:text="#{command-flights}"></a>
 	</div>
 
 </body>

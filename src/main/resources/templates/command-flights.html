@@ -7,11 +7,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-auto">
-				<h5 th:text="#{command-flights}"></h5>
-			</div>
-		</div>
+		<h5 class="text-center" th:text="#{command-flights}"></h5>
 		<div class="row text-light bg-primary">
 			<div class="col-1">
 				<div th:text="#{dept-time-jp}"></div>
@@ -67,20 +63,18 @@
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-end">
-			<div class="col-auto">
-				<a th:href="@{/add-flight}" class="btn btn-primary" th:text="#{add-flight}"></a>
-			</div>
+		<div class="text-end">
+			<a th:href="@{/add-flight}" class="btn btn-primary" th:text="#{add-flight}"></a>
 		</div>
 		<div class="row">
-			<div class"col-2">
+			<div class="col-2">
 				<a th:href="@{/command-dests}" th:text="#{command-dests}"></a>
 			</div>
 			<div class="col-2">
-				<a th:href="@{/}" th:text="#{title}"></a>
+				<a th:href="@{/command-airlines}" th:text="#{command-airlines}"></a>
 			</div>
 			<div class="col-2">
-				<a th:href="@{/command-airlines}" th:text="#{command-airlines}"></a>
+				<a th:href="@{/}" th:text="#{title}"></a>
 			</div>
 		</div>
 	</div>

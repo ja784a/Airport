@@ -3,16 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title th:text="#{title}"></title>
-	<meta http-equiv="refresh" content="5;url=ukb-timetable-eg">
+	<meta http-equiv="refresh" content="5;url=timetable-eg">
 	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}">
 </head>
 <body style="background-color: midnightblue;">
 	<div class="container text-light" style="width: 99%; height: 100vh;">
-		<div class="row justify-content-center" style="height: 10%">
-			<div class="col-auto">
-				<h2 th:text="#{departure}"></h2>
-			</div>
-		</div>
+		<h2 class="text-center" th:text="#{departure}" style="height: 10%;"></h2>
 		<div class="row">
 			<div class="col-1">
 				<div th:text="#{dept-time-jp}"></div>
@@ -84,10 +80,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-end">
-			<div class="col-auto">
-				<a th:href="@{/command-flights}" th:text="#{setting}"></a>
-			</div>
+		<div class="text-end">
+			<a th:href="@{/command-flights}" th:text="#{setting}"></a>
 		</div>
 		<script th:inlene="javascript">
 			const text = ("[[${text}]]");

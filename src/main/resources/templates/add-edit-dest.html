@@ -45,18 +45,12 @@
 					</select>
 				</div>
 			</div>
-			<div class="row justify-content-end">
-				<div class="col-auto">
-					<input type="hidden" th:field="*{id}">
-					<input type="submit" class="btn btn-primary" th:value="#{add-edit}" />
-				</div>
+			<div class="text-end">
+				<input type="hidden" th:field="*{id}">
+				<input type="submit" class="btn btn-primary" th:value="#{add-edit}" />
 			</div>
 		</form>
-		<div class="row">
-			<div class="col-auto">
-				<a th:href="@{/command-dests}" th:text="#{back}"></a>
-			</div>
-		</div>
+		<a th:href="@{/command-dests}" th:text="#{back}"></a>
 	</div>
 
 </body>

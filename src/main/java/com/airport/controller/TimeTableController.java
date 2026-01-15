@@ -31,10 +31,10 @@ public class TimeTableController {
 		Date date = new Date();
 		model.addAttribute("date", date);
 		
-		return "ukb-timetable-jp";
+		return "timetable-jp";
 	}
 	
-	@GetMapping("/ukb-timetable-eg")
+	@GetMapping("/timetable-eg")
 	public String getIimeTableEg(Model model) {
 		List<Timetable> timetable = timetableService.getTimetableByTime();
 		model.addAttribute("timetable", timetable);
@@ -47,7 +47,7 @@ public class TimeTableController {
  		
 		Date date = new Date();
 		model.addAttribute("date", date);
-		return "ukb-timetable-eg";
+		return "timetable-eg";
 	}
 	
 }

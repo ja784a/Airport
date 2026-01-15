@@ -42,11 +42,9 @@
 					<input type="text" th:field="*{twoLetter}">
 				</div>
 			</div>
-			<div class="row justify-content-end">
-				<div class="col-2">
-					<input type="hidden" th:field="*{id}">
-					<input type="submit" th:value="#{add-airline}" class="btn btn-primary">
-				</div>
+			<div class="text-end">
+				<input type="hidden" th:field="*{id}">
+				<input type="submit" th:value="#{add-airline}" class="btn btn-primary">
 			</div>
 			<a th:href="@{/command-airlines}" th:text="#{back}"></a>
 		</form>
